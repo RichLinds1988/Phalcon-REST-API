@@ -11,13 +11,13 @@ return new \Phalcon\Config([
         'modelsDir'      => APP_PATH . '/models/',
         'migrationsDir'  => APP_PATH . '/migrations/',
         'viewsDir'       => APP_PATH . '/views/',
-        'baseUri'        => '/Phalcon-REST-API/',
+        'baseUri'        => '/phalcon/',
     ],
 
     'mongodb' => [
         'host' => "phalcon_mongo_1",
         'port' => 27017,
-        'db' => 'smartbox',
+        'db' => 'phalcon',
     ],
 
     "redis" => [
