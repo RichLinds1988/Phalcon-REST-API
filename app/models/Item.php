@@ -1,10 +1,16 @@
 <?php
+
+namespace Models;
+
 use Phalcon\Mvc\MongoCollection as MongoCollection;
+
 class Item extends MongoCollection
 {
-    public $firstName;
-    public $lastName;
-    public $email;
+    public $uuid;
+    public $userId;
+    public $itemName;
+    public $dateIn;
+    public $status;
     /**
      * Sets the Model's collection
      *
@@ -32,10 +38,12 @@ class Item extends MongoCollection
     public static function insert($req)
     {
         $item = new Item();
-        $item->first = $req->first;
-        $item->last = $req->last;
-        $item->dob = $req->dob;
-        $item->email = $req->email;
+        $item->uuid = uniqid(md5(random_bytes(10)));
+        $item->userId = $req->userId;
+        $item->itemName = $req->itemName;
+        $item->status = 0;
+        $item->dateIn = strtotime("now");
+
         # Create() returns bool
         if($item->create())
         {

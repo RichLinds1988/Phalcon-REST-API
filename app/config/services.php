@@ -12,13 +12,14 @@ $config = include APP_PATH . "/config/config.php";
 
 
 # Mongodb service
-$di->setShared('mongo', function() {
+$di->setShared('mongo', function() use ($config) {
 
     $mongo = new MongoDBClient(
         "mongodb://" . $config->mongodb->host . ":" . $config->mongodb->port
     );
     return $mongo->selectDatabase($config->mongodb->db);
 });
+
 # Need this to make our Models use Mongo service
 $di->setShared('collectionManager', function () {
     return new Manager();

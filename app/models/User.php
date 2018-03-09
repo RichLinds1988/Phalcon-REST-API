@@ -1,5 +1,7 @@
 <?php
 
+namespace Models;
+
 use Phalcon\Mvc\MongoCollection as MongoCollection;
 
 class User extends MongoCollection

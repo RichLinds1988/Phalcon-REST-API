@@ -11,17 +11,17 @@ return new \Phalcon\Config([
         'modelsDir'      => APP_PATH . '/models/',
         'migrationsDir'  => APP_PATH . '/migrations/',
         'viewsDir'       => APP_PATH . '/views/',
-        'baseUri'        => '/smartbox-api/',
+        'baseUri'        => '/Phalcon-REST-API/',
     ],
 
     'mongodb' => [
-        'host' => "smartbox_mongo_1",
+        'host' => "phalcon_mongo_1",
         'port' => 27017,
         'db' => 'smartbox',
     ],
 
     "redis" => [
-        "host" => "smartbox_redis_1",
+        "host" => "phalcon_redis_1",
         "port" => 6379,
         "db" => 1
     ],
