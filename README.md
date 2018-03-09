@@ -16,6 +16,8 @@ Base URL: http://45.55.45.146:8600
 This API is protected by a very basic authentication system. The only requirement is that the request must contain  
 an `Authorization` header with a value equal to `1234`.  
 
+The Authentication middleware will expire a user after 600 seconds.
+
 ## Routes
 
 ### Users
